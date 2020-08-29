@@ -8,6 +8,13 @@ To run the test methods
 To use a new URL to parse change the URL variable in the below Test Class
 /314ecorp-webscanner/src/test/java/edu/nyideas/ecorp/webscanner/AppMainTest.java
 
+#### OR
+
+ Run ./buildAndRun.sh <URL-to-be-scanned> in the root directory of the project
+
+
+
+
 In the console the unit test results as below appears:-
 ```
 -------------------------------------------------------
