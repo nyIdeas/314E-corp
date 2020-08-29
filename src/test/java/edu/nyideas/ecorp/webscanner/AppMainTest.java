@@ -43,12 +43,18 @@ public class AppMainTest
     	
     	final String userAgent = "Mozilla/5.0 (jsoup)";
     	final int timeout = 5 * 1000;
-    	final String url = "https://www.healthcatalyst.com/insights/";
+    	
+    	//URL from which data has to be parsed
+		String url = "https://www.healthcatalyst.com/insights/";
+    	if(!System.getProperty("scanURL").isEmpty()) {
+    		url=System.getProperty("scanURL");
+    	}
+    	
     	String wordArray[]=CustomJsoupURLParser.jsoupParser(url, userAgent, timeout);
     	
     	Trie trie=new WordTrie(10);
     	for(String word: wordArray) {
-    		trie.insertAndReturnFreq(word);
+    		trie.insert(word);
     	}
     	
     	trie.getMinHeapWords().stream().forEach(e->{System.out.println("Word -> "+e.getT()+" | Count -> "+e.getFreq());});
