@@ -4,7 +4,7 @@ import edu.nyideas.ecorp.webscanner.trie.heap.PriorityTrieQueue;
 
 public interface Trie {
 
-	public void insertAndReturnFreq(String word);
+	public void insert(String word);
 	
 	public String search(String word);
 	

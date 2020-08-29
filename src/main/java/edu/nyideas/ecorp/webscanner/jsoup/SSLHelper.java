@@ -12,10 +12,13 @@ import javax.net.ssl.X509TrustManager;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
+/*
+ * To avoid the SSL verification for HTTPS urls.
+ */
+
+
 public class SSLHelper {
 	
-
-
     static public Connection getConnection(String url){
         return Jsoup.connect(url).sslSocketFactory(SSLHelper.socketFactory());
     }
